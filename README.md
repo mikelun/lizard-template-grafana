@@ -27,5 +27,10 @@ fresh Grafana is never briefly reachable on a public URL with `admin/admin`.
 
 ## Updating Grafana
 
-Bump the tag in the `Dockerfile` and redeploy. Grafana migrates its own schema
-in Postgres on start.
+Bump the tag and digest in the `Dockerfile` and redeploy. Grafana migrates its
+own schema in Postgres on start, one way: after an upgrade, the database no
+longer works with the older version.
+
+Currently pinned: **12.4.15** (latest patch of the 12.4 line, 2026-11-10). The
+image keeps `/run.sh`, which the template's start command execs. Grafana 12
+dropped AngularJS plugins; this template installs none.

@@ -7,7 +7,7 @@
 # Pinned, not :latest. A template is deployed by other people long after it is
 # written, and a floating tag turns "deploy the template that worked yesterday"
 # into a different Grafana every time.
-FROM grafana/grafana:11.3.0
+FROM grafana/grafana:12.4.15@sha256:2894082f6cf7081aefdc1389265c04000812309208c190d75e8c65f7a30e4b7e
 
 # Grafana defaults to 3000 and the template spec sets the same containerPort.
 EXPOSE 3000
